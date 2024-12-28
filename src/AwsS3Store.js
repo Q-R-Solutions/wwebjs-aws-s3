@@ -90,8 +90,6 @@ class AwsS3Store {
     const remoteFilePath = path.join(this.remoteDataPath, `${options.session}.zip`).replace(/\\/g, '/');
     options.remoteFilePath = remoteFilePath;
     
-    // await this.#deletePrevious(options);
-    
     try {
       const fileStream = fs.createReadStream(`${options.session}.zip`);
       const params = {
